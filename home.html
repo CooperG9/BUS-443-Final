@@ -1,0 +1,70 @@
+{% extends "finalapp/base.html" %}
+{% block content %} 
+
+		<div>
+			<center><h1>Home Dashboard</h1></center>
+		</div>
+
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-lg "><div class="card mx-auto d-block" style="width:300px;height:400px">
+				<img class="card-img-top" src="https://firstgen.naspa.org/images/dmImage/StandardImage/standard_1800x1090_define-firstgen12.jpg" style="width:100%"/>
+				<div class="card-body">
+					<h5 class="card-title">Total Students</h5>
+					<p> The number of students enrolled in our system is {{ count1 }} </p>
+
+				</div>
+			</div></div>
+				<div class="col-md "><div class="card mx-auto d-block" style="width:300px;height:400px">
+				<img class="card-img-top" src="https://i0.wp.com/edu2success.info/wp-content/uploads/2018/02/bettergpa_green.png?resize=720%2C400&ssl=1" style="width:100%"/>
+				<div class="card-body">
+					<h5 class="card-title">GPA</h5>
+					<p> The average GPA of students enrolled in our system is {{ count2 }} </p>
+					
+
+				</div>
+			</div></div>
+				<div class="col-md "><div class="card mx-auto d-block" style="width:300px;height:400px">
+				<img class="card-img-top" src="https://themetamorphosis.net/wp-content/uploads/2019/06/senior-year-of-college-banner.jpg" style="width:100%"/>
+				<div class="card-body">
+					<h5 class="card-title">Seniors</h5>
+					<p> The number of seniors in our system is {{ count3 }} </p>
+
+				</div>
+			</div></div>
+				<div class="col-md "><div class="card mx-auto d-block" style="width:300px;height:400px">
+				<img class="card-img-top" src="https://wp-media.petersons.com/blog/wp-content/uploads/2019/01/10123538/iStock-905458072.jpg" style="width:100%"/>
+				<div class="card-body">
+					<h4 class="card-title">Juniors</h4>
+					<p> The number of juniors in our system is {{ count4 }} </p>
+
+				</div>
+			</div></div>
+				<div class="col-md "><div class="card mx-auto d-block" style="width:300px;height:400px">
+				<img class="card-img-top" src="https://i.ytimg.com/vi/XKxegLYpEzo/maxresdefault.jpg" style="width:100%"/>
+				<div class="card-body">
+					<h6 class="card-title">Sophomores</h6>
+					<p> The number of sophomores in our system is {{ count5 }} </p>
+
+				</div>
+			</div></div>
+				<div class="col-md "><div class="card mx-auto d-block" style="width:300px;height:400px">
+				<img class="card-img-top" src="https://www.annieandeverything.com/wp-content/uploads/2015/08/college-freshman-1300x550-990x419.jpg" style="width:100%"/>
+				<div class="card-body">
+					<h4 class="card-title">Freshmen</h4>
+					<p> The number of freshmen in our system is {{ count6 }} </p>
+
+				</div>
+			</div></div>
+				<div class="col-md "><div class="card mx-auto d-block" style="width:300px;height:400px">
+				<img class="card-img-top" src="https://ecampusblog.com/wp-content/uploads/2013/10/college-classes.jpg" style="width:100%"/>
+				<div class="card-body">
+					<h4 class="card-title">Courses</h4>
+					<p> The Number of courses we are offering are {{ count7 }} </p>
+
+				</div>
+			</div></div>
+		</div>
+
+
+{% endblock %}

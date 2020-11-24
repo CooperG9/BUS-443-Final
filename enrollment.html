@@ -1,0 +1,90 @@
+{% extends "finalapp/base.html" %}
+{% block content %}
+
+<div class="container">
+	<h1>Student Enrolement</h1>
+</div>
+
+<div class="container">
+	<select id="sid">
+		<option selected="">Select Student</option>
+		{% for sid in studentid %}
+			<option value="{{ sid.studentid }}">{{ sid.studentid }}</option>
+		{% endfor %}
+	</select>
+</div>
+
+<div class="container">
+	<select id="cname">
+		<option selected="">Select Course</option>
+		{% for cname in coursetitle %}
+			<option value="{{ cname.coursetitle }}">{{ cname.coursetitle }}</option>
+		{% endfor %}
+	</select>
+	<br/>
+	<br/>
+	<button type="button" id"ebtn" class="btn btn-primary">Enrole</button>
+	<br/>
+</div>
+
+<div class="container">
+	<table class="table">
+		<thead>
+			<tr>
+			    <th>Student ID</th>
+			    <th>Course ID</th>
+			    <th>Course Title</th>
+			    <th>Course Name</th>
+			    <th>Course Section Code</th>
+			    <th>Course Department</th>
+			    <th>Instructor Name</th>
+			</tr>
+		</thead>
+		<tbody>
+		    <tr>
+		    {% for row in studentdetails %}
+			<td>{{ row.studentid }}</td>
+		    {% endfor %}
+		    {% for row in course %}
+			<td>{{ row.coursetitle }}</td>
+		    {% endfor %}
+		    </tr>
+		</tbody>
+	</table>
+</div>
+
+<script>
+	$(document).ready(function(){
+		$("#ebtn").click(function(){
+			$.ajax({
+				url: "{% url 'enrollment' %}",
+				data: {
+				    sid: $("#sid").val(),
+				    cname: $("#cname").val()
+				},
+				success: function(data){
+				    if(data=='Success'){
+					window.location = "{% url 'enrollment' %}"
+					}
+					else {
+						alert(" Student is already enroled in this course ")
+					}
+				}
+			});
+		});
+		
+		$("#sid").change(function(){
+			$.ajax({
+				url: "{% url 'enrollment' %}",
+				data: {
+					sid: $("#sid").val()
+				},
+				success: function(data){
+					window.location = "{% url 'enrollment' %}"
+				}
+			});
+		});
+	});
+</script>
+	
+{% endblock %}
